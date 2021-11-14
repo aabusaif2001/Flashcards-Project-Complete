@@ -8,10 +8,10 @@ function NotEnough({ cardCount }) {
 
   return (
     <div>
-      <h3 class="font-weight-bold pb-3">Not enough cards.</h3>
-      <p class="pb-1">You need at least 3 cards to study. There are {cardCount} cards in this deck</p>
+      <h3 className="font-weight-bold pb-3">Not enough cards.</h3>
+      <p className="pb-1">You need at least 3 cards to study. There are {cardCount} cards in this deck</p>
       <button 
-        class="btn btn-primary oi oi-plus" 
+        className="btn btn-primary oi oi-plus" 
         onClick={() => history.push(`/decks/${deckId}/cards/new`)}>
         Add Cards
       </button>

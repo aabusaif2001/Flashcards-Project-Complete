@@ -26,26 +26,26 @@ function CreateDeck({ newDeck }) {
   return (
     <div className="create-deck-container">
       <NavBar page={"Create Deck"} />
-      <h3 class="font-weight-bold">Create Deck</h3>
+      <h3 className="font-weight-bold">Create Deck</h3>
       <form onSubmit={handleSubmit}>
-        <label class="w-100">
+        <label className="w-100">
           Name
           <br />
           <input 
             type="text" 
             id="name" 
-            class="form-control"
+            className="form-control"
             value={name} 
             onChange={handleNameChange} 
             placeholder="Deck Name" 
           />
         </label>
-        <label class="w-100">
+        <label className="w-100">
           Description
           <br />
           <textarea 
             id="description" 
-            class="form-control" 
+            className="form-control" 
             value={description} 
             onChange={handleDescriptionChange} 
             placeholder="Brief description of the deck" 
@@ -53,13 +53,13 @@ function CreateDeck({ newDeck }) {
         </label>
         <button 
           type="button" 
-          class="btn btn-secondary mr-1 py-2" 
+          className="btn btn-secondary mr-1 py-2" 
           onClick={handleCancel}>
           Cancel
         </button>
         <button 
           type="submit" 
-          class="btn btn-primary py-2">
+          className="btn btn-primary py-2">
           Submit
         </button>
       </form>

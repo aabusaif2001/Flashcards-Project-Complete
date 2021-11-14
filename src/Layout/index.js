@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState} from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 import { listDecks, createDeck, updateDeck, deleteDeck, createCard, updateCard, deleteCard } from "../utils/api/index";
 import Header from "./Header";
@@ -11,17 +11,7 @@ function Layout() {
   const history = useHistory();
   const abortController = new AbortController();
   const signal = abortController.signal;
-  const [decks, setDecks] = useState([]);
-
-  
-  useEffect(() => {
-    getDecks();
-    return () => { 
-      abortController.abort();
-    }
-  }, []);
-
-  
+  const [_, setDecks] = useState([]);
   async function getDecks() {
     try {
       const response = await listDecks(signal);
@@ -34,7 +24,6 @@ function Layout() {
       }
     }
   }
-
   
   async function newDeck(deck) {
     const response = await createDeck(deck, signal);
@@ -82,7 +71,7 @@ function Layout() {
       <Header />
       <Switch>
         <Route exact path="/">
-          <DeckList decks={decks} removeDeck={removeDeck} />
+          <DeckList removeDeck={removeDeck} />
         </Route>
         <Route path="/decks/new">
           <CreateDeck newDeck={newDeck} />
